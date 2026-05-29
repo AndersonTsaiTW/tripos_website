@@ -23,7 +23,7 @@ const createInquiryEmail = (formData) => {
 
 const openMailFallback = (formData) => {
   const { subject, body } = createInquiryEmail(formData);
-  window.location.href = `mailto:hello@trilliuminotech.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = `mailto:triposcanada@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 };
 
 document.querySelector("[data-contact-form]")?.addEventListener("submit", async (event) => {

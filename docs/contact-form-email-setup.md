@@ -22,7 +22,7 @@
 - `script.js`
   - 處理表單送出。
   - 成功時顯示成功訊息。
-  - 失敗時退回 `mailto:hello@trilliuminotech.com`。
+  - 失敗時退回 `mailto:triposcanada@gmail.com`。
 
 - `functions/api/contact.js`
   - Cloudflare Pages Function。
@@ -42,8 +42,8 @@
 目前後端預設值是：
 
 ```text
-From: Trillium Innotech <hello@xgenerators.net>
-To: hello@xgenerators.net
+From: Trillium Innotech <hello@tripos.ca>
+To: triposcanada@gmail.com
 Reply-To: 使用者在表單填的 email
 ```
 
@@ -62,13 +62,13 @@ Resend 主要負責「寄信」。
 它最在意的是 `CONTACT_FROM` 裡面的 email domain：
 
 ```text
-CONTACT_FROM=Trillium Innotech <hello@xgenerators.net>
+CONTACT_FROM=Trillium Innotech <hello@tripos.ca>
 ```
 
 所以 Resend 需要驗證：
 
 ```text
-xgenerators.net
+tripos.ca
 ```
 
 網站本身可以繼續使用 Cloudflare Pages 的網址：
@@ -92,14 +92,14 @@ trillium-website.pages.dev
 3. 新增 domain：
 
    ```text
-   xgenerators.net
+   tripos.ca
    ```
 
 4. Resend 會給幾筆 DNS records。
 
    常見會有 SPF、DKIM、TXT、CNAME 之類的紀錄。
 
-5. 到 `xgenerators.net` 的 DNS 管理頁，把 Resend 給的 records 加進去。
+5. 到 `tripos.ca` 的 DNS 管理頁，把 Resend 給的 records 加進去。
 
 6. 回 Resend 等它顯示 domain verified。
 
@@ -130,11 +130,11 @@ Workers & Pages
 
 ```text
 RESEND_API_KEY=你的 Resend API key
-CONTACT_FROM=Trillium Innotech <hello@xgenerators.net>
-CONTACT_TO=hello@xgenerators.net
+CONTACT_FROM=Trillium Innotech <hello@tripos.ca>
+CONTACT_TO=triposcanada@gmail.com
 ```
 
-如果 `hello@xgenerators.net` 還沒有真的能收信，可以先用自己的 Gmail 測試：
+如果正式收件信箱還沒有真的能收信，可以先用自己的 Gmail 測試：
 
 ```text
 CONTACT_TO=yourname@gmail.com
@@ -143,7 +143,7 @@ CONTACT_TO=yourname@gmail.com
 但是 `CONTACT_FROM` 建議維持使用已經在 Resend 驗證過的網域：
 
 ```text
-CONTACT_FROM=Trillium Innotech <hello@xgenerators.net>
+CONTACT_FROM=Trillium Innotech <hello@tripos.ca>
 ```
 
 設定完環境變數後，要重新部署 Cloudflare Pages。
@@ -154,8 +154,8 @@ CONTACT_FROM=Trillium Innotech <hello@xgenerators.net>
 
 ```text
 RESEND_API_KEY=re_your_resend_api_key
-CONTACT_FROM=Trillium Innotech <hello@xgenerators.net>
-CONTACT_TO=hello@xgenerators.net
+CONTACT_FROM=Trillium Innotech <hello@tripos.ca>
+CONTACT_TO=triposcanada@gmail.com
 ```
 
 注意：`.env` 已經被 `.gitignore` 忽略，不要把真正的 API key commit 上去。
@@ -205,9 +205,9 @@ CONTACT_TO=hello@xgenerators.net
 - Resend domain 還沒 verified。
 - `CONTACT_FROM` 的 domain 不是 Resend 驗證過的 domain。
 
-### Resend 不讓我用 `hello@xgenerators.net`
+### Resend 不讓我用 `hello@tripos.ca`
 
-通常是因為 `xgenerators.net` 還沒有完成 domain verification。
+通常是因為 `tripos.ca` 還沒有完成 domain verification。
 
 要回 Resend 的 `Domains` 看 DNS records 是否都通過。
 
@@ -223,6 +223,6 @@ CONTACT_TO=hello@xgenerators.net
 ## 目前決定
 
 - 網站可以繼續用 Cloudflare Pages 預設網域。
-- 寄件網域使用 `xgenerators.net`。
+- 寄件網域使用 `tripos.ca`。
 - Resend 只需要驗證 `CONTACT_FROM` 裡的 domain。
 - `CONTACT_TO` 可以先用 Gmail 測試，再改成正式信箱。

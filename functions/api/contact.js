@@ -51,8 +51,8 @@ export async function onRequestPost({ request, env }) {
     return json({ error: "Please enter a valid email address." }, 400);
   }
 
-  const fromAddress = env.CONTACT_FROM || "Trillium Innotech <hello@xgenerators.net>";
-  const toAddress = env.CONTACT_TO || "hello@xgenerators.net";
+  const fromAddress = env.CONTACT_FROM || "Trillium Innotech <hello@tripos.ca>";
+  const toAddress = env.CONTACT_TO || "triposcanada@gmail.com";
   const { htmlBody, textBody } = createEmailContent({ name, email, restaurant, message });
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
