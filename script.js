@@ -8,7 +8,7 @@ syncHeader();
 window.addEventListener("scroll", syncHeader, { passive: true });
 
 const createInquiryEmail = (formData) => {
-  const subject = "Trillium Innotech POS inquiry";
+  const subject = "TriPOS POS inquiry";
   const body = [
     `Name: ${formData.get("name") || ""}`,
     `Email: ${formData.get("email") || ""}`,

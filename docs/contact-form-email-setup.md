@@ -42,7 +42,7 @@
 目前後端預設值是：
 
 ```text
-From: Trillium Innotech <hello@tripos.ca>
+From: TriPOS <hello@tripos.ca>
 To: triposcanada@gmail.com
 Reply-To: 使用者在表單填的 email
 ```
@@ -62,7 +62,7 @@ Resend 主要負責「寄信」。
 它最在意的是 `CONTACT_FROM` 裡面的 email domain：
 
 ```text
-CONTACT_FROM=Trillium Innotech <hello@tripos.ca>
+CONTACT_FROM=TriPOS <hello@tripos.ca>
 ```
 
 所以 Resend 需要驗證：
@@ -130,7 +130,7 @@ Workers & Pages
 
 ```text
 RESEND_API_KEY=你的 Resend API key
-CONTACT_FROM=Trillium Innotech <hello@tripos.ca>
+CONTACT_FROM=TriPOS <hello@tripos.ca>
 CONTACT_TO=triposcanada@gmail.com
 ```
 
@@ -143,7 +143,7 @@ CONTACT_TO=yourname@gmail.com
 但是 `CONTACT_FROM` 建議維持使用已經在 Resend 驗證過的網域：
 
 ```text
-CONTACT_FROM=Trillium Innotech <hello@tripos.ca>
+CONTACT_FROM=TriPOS <hello@tripos.ca>
 ```
 
 設定完環境變數後，要重新部署 Cloudflare Pages。
@@ -154,7 +154,7 @@ CONTACT_FROM=Trillium Innotech <hello@tripos.ca>
 
 ```text
 RESEND_API_KEY=re_your_resend_api_key
-CONTACT_FROM=Trillium Innotech <hello@tripos.ca>
+CONTACT_FROM=TriPOS <hello@tripos.ca>
 CONTACT_TO=triposcanada@gmail.com
 ```
 
