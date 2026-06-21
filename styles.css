@@ -508,6 +508,83 @@ p {
   font-size: 1rem;
 }
 
+.trinity-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(28px, 4vw, 48px);
+}
+
+.trinity-logo-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.trinity-logo {
+  width: clamp(80px, 10vw, 120px);
+  height: auto;
+}
+
+.trinity-tagline {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--charcoal);
+  letter-spacing: 0.04em;
+}
+
+.trinity-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.5vw, 28px);
+  width: 100%;
+}
+
+.trinity-value {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+  box-shadow: 0 10px 28px rgba(6,55,91,0.06);
+}
+
+.trinity-value h3 {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.trinity-value p {
+  margin-top: 8px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
+.trinity-label {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+.trinity-people .trinity-label { background: rgba(253,187,45,0.2); color: #76510b; }
+.trinity-nature .trinity-label { background: rgba(47,168,102,0.15); color: var(--deep-teal); }
+.trinity-tech .trinity-label   { background: rgba(63,130,232,0.14); color: var(--ocean); }
+
+.trinity-people { border-top: 4px solid var(--gold); }
+.trinity-nature { border-top: 4px solid var(--aqua); }
+.trinity-tech   { border-top: 4px solid var(--blue-slate); }
+
+@media (max-width: 680px) {
+  .trinity-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 .cta-panel {
   padding: clamp(28px, 4vw, 44px);
   border-radius: 8px;
