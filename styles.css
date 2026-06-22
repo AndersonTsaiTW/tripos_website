@@ -309,6 +309,36 @@ p {
   margin-top: 16px;
 }
 
+.card-header-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-header-row h3 {
+  margin-top: 0;
+}
+
+.card-header-row .card-icon {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  background: transparent;
+  border-radius: 0;
+  padding: 0 0 3px;
+  font-size: 1.1rem;
+  border-bottom: 3px solid currentColor;
+}
+
+.feature-card:nth-child(2n) .card-header-row .card-icon,
+.feature-card:nth-child(3n) .card-header-row .card-icon {
+  background: transparent;
+}
+
+.feature-layout.stack .feature-card {
+  min-height: 0;
+}
+
 .feature-card p {
   margin-top: 10px;
   color: var(--muted);
