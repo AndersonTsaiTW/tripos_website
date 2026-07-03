@@ -7,6 +7,45 @@ const syncHeader = () => {
 syncHeader();
 window.addEventListener("scroll", syncHeader, { passive: true });
 
+const navToggle = document.querySelector("[data-nav-toggle]");
+const nav = document.querySelector("[data-nav]");
+
+const closeNav = () => {
+  navToggle?.setAttribute("aria-expanded", "false");
+  nav?.classList.remove("is-open");
+  document.body.classList.remove("nav-open");
+};
+
+const openNav = () => {
+  navToggle?.setAttribute("aria-expanded", "true");
+  nav?.classList.add("is-open");
+  document.body.classList.add("nav-open");
+};
+
+navToggle?.addEventListener("click", () => {
+  nav?.classList.contains("is-open") ? closeNav() : openNav();
+});
+
+nav?.addEventListener("click", (event) => {
+  if (event.target instanceof HTMLElement && event.target.tagName === "A") {
+    closeNav();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeNav();
+});
+
+document.addEventListener("click", (event) => {
+  if (!nav?.classList.contains("is-open")) return;
+  if (event.target instanceof Node && (nav.contains(event.target) || navToggle?.contains(event.target))) return;
+  closeNav();
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 900) closeNav();
+});
+
 const createInquiryEmail = (formData) => {
   const subject = "TriPOS POS inquiry";
   const body = [
