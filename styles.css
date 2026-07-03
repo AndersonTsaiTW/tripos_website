@@ -935,7 +935,11 @@ p {
   }
 
   .hero {
-    height: 100svh;
+    height: 70vh;
+  }
+
+  .hero-image {
+    object-position: right center;
   }
 
   .hero-overlay {
@@ -944,6 +948,10 @@ p {
 
   .page-hero {
     min-height: 70vh;
+  }
+
+  .page-hero-image {
+    object-position: right center;
   }
 
   .page-hero-overlay {
